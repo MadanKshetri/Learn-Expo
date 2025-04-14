@@ -30,7 +30,7 @@ export default function Index() {
       </View>
       <View style={styles.footerContainer}>
         <Button theme="primary" label="Choose a photo" onPress={PickImageAsync} />
-        <Button label="Use this photo" />
+        <Button label="Use this pic" />
       </View>
     </View>
   );
