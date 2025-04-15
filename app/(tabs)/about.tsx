@@ -1,21 +1,32 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import ElevatedCards from '@/components/Elevatedcar';
+import Flatcard from '@/components/Flatcard';
+import ImageViewer from '@/components/ImageViewer';
+import FancyCard from '@/components/FancyCard';
+
 
 export default function AboutScreen() {
   return (
+    <ScrollView>
     <View style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
+      <View style ={styles.cards}>
+      <Flatcard />
+      < ElevatedCards/>
+      <FancyCard />      
+      <FancyCard />      
+      <FancyCard />      
+      <FancyCard />      
+      </View>
     </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  text: {
-    color: '#fff',
-  },
+  cards:{
+
+  }
 });

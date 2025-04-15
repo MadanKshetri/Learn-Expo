@@ -9,7 +9,8 @@ const PlaceholderImage = require('@/assets/images/background-image.png');
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
-  
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+
   const PickImageAsync = async () =>{
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -19,6 +20,8 @@ export default function Index() {
     if(!result.canceled){
       console.log(result.assets[0])
       setSelectedImage(result.assets[0].uri)
+      setShowAppOptions(true);
+
     } else {
       alert('You did not select any image.')
     }
@@ -30,7 +33,7 @@ export default function Index() {
       </View>
       <View style={styles.footerContainer}>
         <Button theme="primary" label="Choose a photo" onPress={PickImageAsync} />
-        <Button label="Use this photo" />
+        <Button label="Use this pic" />
       </View>
     </View>
   );
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#25292e',
     alignItems: 'center',
-  },
+  },  
   imageContainer: {
     flex: 1,
   },
