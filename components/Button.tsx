@@ -34,7 +34,7 @@ export default function Button({ label, theme, onPress }: Props) {
     </View>
   );
 }
-
+``
 const styles = StyleSheet.create({
   buttonContainer: {
     width: 320,
